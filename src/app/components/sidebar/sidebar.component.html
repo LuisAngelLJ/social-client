@@ -1,0 +1,59 @@
+<div id="user-card" class="col-12">
+	<h1 class="h1-strong">Mis datos</h1>
+
+	<div class="avatar">
+		<img src="{{url+'get-image-user/'+identity.image}}" *ngIf="identity.image">
+		<img src="assets/images/user.png" *ngIf="!identity.image">
+	</div>
+	<div class="name-surname">
+		<a href="#">{{identity.name+' '+identity.surname}}</a>
+		<p class="nick-name">{{identity.nick}}</p>
+	</div>
+
+	<div class="stats" *ngIf="stats">
+		<div class="following-data">
+			<a href="#">
+				<span class="label-stats">Siguiendo </span>
+				<span class="number-stats">{{stats.following}}</span>
+			</a>
+		</div>
+		<div class="following-data">
+			<a href="#">
+				<span class="label-stats">Seguidores </span>
+				<span class="number-stats">{{stats.followed}}</span>
+			</a>
+		</div>
+		<div class="following-data">
+			<a href="#">
+				<span class="label-stats">Publicaciones </span>
+				<span class="number-stats">{{stats.publications}}</span>
+			</a>
+		</div>
+	</div>
+
+	<div id="new-publication" class="col-12">
+		<div class="alert alert-success" *ngIf="status == 'success'">
+			Publicación Subida
+		</div>
+
+		<div class="alert alert-danger" *ngIf="status == 'error'">
+			Error al enviar la publicación
+		</div>
+
+
+		<form #newPublicationForm="ngForm" (ngSubmit)="onSubmit(newPublicationForm); sendPublication($event)" class="col-12">
+			<p>
+				<label for="text" class="form-label">¿Que estás pensando?</label>
+				<textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
+				<span *ngIf="!text.valid && text.touched">El texto es obligatorio</span>
+			</p>
+
+			<p>
+				<label for="file" class="form-label">Sube tu Imagen</label>
+				<input type="file" class="form-control" name="file" placeholder="subir Imagen">
+			</p>
+
+			<input type="submit" value="Publicar" class="btn btn-dark" [disabled]="!newPublicationForm.form.valid">
+		</form>
+	</div>
+</div>

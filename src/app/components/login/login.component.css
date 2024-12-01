@@ -1,0 +1,21 @@
+.login {
+	height: calc(100vh - 56px);
+	background-image: url('../../../assets/images/fondo_login.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login > div {
+	height: 400px;
+	border-radius: 30px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.login form input.form-control {
+	background-color: rgb(56 77 107 / 91%);
+	color: white;
+	font-size: 22px;
+}

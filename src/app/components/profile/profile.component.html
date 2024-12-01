@@ -1,0 +1,35 @@
+<div class="row cont profile">
+	<div class="col-lg-8">
+		<p class="d-block w-100 text-center h1-strong">{{title}}</p>
+
+		<div class="card text-bg-dark" style="width: 18rem;">
+		  <img *ngIf="user.image" src="{{url+'get-image-user/'+user.image}}" class="card-img-top" alt="...">
+		  <img *ngIf="!user.image" src="assets/images/user.png" class="rounded-circle" alt="foto de perfil">
+		  <div class="card-body">
+		    <h5 class="card-title">{{user.name+' '+user.surname}} <span class="label" *ngIf="seguir">Te sigue</span></h5>
+		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		  </div>
+		  <ul class="list-group list-group-flush">
+		    <li class="list-group-item">Siguiendo {{' '+stats.followed}}</li>
+		    <li class="list-group-item">Seguidores  {{' '+stats.following}}</li>
+		    <li class="list-group-item">Publicaciones  {{' '+stats.publications}}</li>
+		  </ul>
+		  <div class="card-body">
+		  	<button class="btn btn-light" *ngIf="!siguiendo" (click)="followUser(user._id)">Seguir</button>
+		    <button class="btn btn-primary" *ngIf="siguiendo" (mouseenter)="mouseEnter(user._id)" (mouseleave)="mouseLeave()" [class.btn-danger]="user._id == followUserOver" (click)="unfollowUser(user._id)">
+		    	<span *ngIf="user._id != followUserOver; else following">Siguiendo</span>
+
+		    	<ng-template #following>
+		    		<span>Dejar de seguir</span>
+		    	</ng-template>
+		    </button>
+		  </div>
+		</div>
+
+		<div class="publications mt-4 mb-4" *ngIf="user">
+			<publications [user]="user._id"></publications>
+		</div>
+	</div>
+
+	<sidebar class="col-lg-4"></sidebar>
+</div>

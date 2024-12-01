@@ -1,0 +1,37 @@
+<div class="row cont timeline">
+	<div class="col-8">
+		<h1 class="h1-strong">{{title}}<button class="btn btn-light ml-5 pull-right" (click)="refresh($event)">Mostrar nuevas</button></h1>
+		<table class="table">
+		  	<thead>
+			    <!-- <tr>
+			      <th scope="col">Imagen</th>
+			      <th scope="col">Nombre</th>
+			      <th scope="col">Apodo</th>
+			      <th scope="col">Correo Electrónico</th>
+			    </tr> -->
+		  	</thead>
+		  	<tbody>
+			    <tr *ngFor="let publication of publications" class="mt-3 mb-3">
+		    		<td>
+			      		<img *ngIf="publication.user.image" src="{{url+'get-image-user/'+publication.user.image}}" class="rounded-circle" alt="foto de perfil">
+
+			      		<img *ngIf="!publication.user.image" src="assets/images/user.png" class="rounded-circle" alt="foto de perfil">
+			        </td>
+			        <td>
+			        	<a [routerLink]="['/perfil/'+publication.user._id]" *ngIf="publication.user._id !== identity._id">{{publication.user.name+' '+publication.user.surname}}</a>
+			        	<label *ngIf="publication.user._id == identity._id">{{publication.user.name+' '+publication.user.surname}}</label>
+			        </td>
+			        <td>{{publication.text}}</td>
+			        <td class="date">{{publication.created_at | moment}}</td>
+			    </tr>
+		  	</tbody>
+		</table>
+
+		<div class="w-100 d-flex justify-content-center" *ngIf="nextPage">
+			<button (click)="viewMore()" class="btn btn-primary rounded-pill">Ver más</button>
+		</div>
+	</div>
+	<!-- ejecutar metodo en el padre que es timeline -->
+	<sidebar class="col-4" (sended)="refresh($event)"></sidebar>
+	<div class="clear-fix"></div>
+</div>

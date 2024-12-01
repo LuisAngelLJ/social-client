@@ -1,0 +1,194 @@
+* {
+	box-sizing: border-box;
+}
+
+main {
+	height: calc(100vh - 60px);
+	background-color: #eee;
+}
+
+.cont {
+	height: 100%;
+	overflow: hidden;
+}
+
+.cont > div {
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.active {
+	background-color: #4b5359 !important;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    justify-content: space-between;
+}
+
+.navbar .container-fluid .navbar-brand {
+	color: white;
+}
+
+.navbar .container-fluid .collapse .nav-link {
+	color: white;
+}
+
+.navbar .container-fluid .navbar-toggler,
+.navbar .container-fluid .navbar-toggler-icon {
+	color: white;
+}
+
+.h1-strong {
+	font-size: 35px;
+	font-weight: bold;
+	margin-left: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #eee;
+}
+
+.jumbotron {
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.dropdown-menu[data-bs-popper] {
+    left: -90px !important;
+}
+
+#navbarNavDropdown .dropdown-menu li a:hover {
+	background-color: #000 !important;
+}
+
+form p label {
+	display: block;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+/*gente*/
+.people .table tbody tr td img {
+	width: 90px;
+	height: 90px;
+	object-fit: cover;
+}
+
+.people .table tbody tr td a {
+	color: #555;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.people .table tbody tr td button {
+	width: 139px;
+}
+
+/*sidebar*/
+sidebar {
+	height: 100%;
+	background-color: #03396c;
+}
+
+#user-card {
+	overflow: hidden;
+}
+
+#user-card .h1-strong {
+	color: #fff;
+}
+
+#user-card .avatar {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	margin: 50px auto;
+}
+
+#user-card .avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+#user-card .name-surname {
+	text-align: center;
+}
+
+#user-card .name-surname a {
+	font-weight: bold;
+	font-size: 26px;
+	color: #fff;
+	text-decoration: none;
+}
+
+#user-card .name-surname .nick-name {
+	font-weight: 500;
+	font-size: 19px;
+	color: #969393;
+}
+
+#user-card form label {
+	color: #fff;
+}
+
+#user-card .stats {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#user-card .stats .following-data .label-stats,
+#user-card .stats .following-data .number-stats {
+	display: block;
+	text-align: center;
+}
+
+#user-card .stats .following-data a {
+	text-decoration: none;
+}
+
+#user-card .stats .following-data .label-stats {
+	font-size: 14px;
+	color: #fff;
+}
+
+#user-card .stats .following-data .number-stats {
+	font-size: 28px;
+	color: #5f9bd1;
+	font-weight: bold;
+}
+
+
+/*timeline*/
+.timeline .table tbody tr td img {
+	width: 45px;
+	height: auto;
+	object-fit: contain;
+}
+
+.timeline .table tbody tr .date {
+	color: gray;
+}
+
+
+/*perfil*/
+.profile .card {
+	width: 55% !important;
+	margin: 0 auto;
+}
+
+.profile .card .card-body .label {
+	background-color: white;
+	color: #000;
+	border-radius: 5px;
+	font-size: 12px;
+	padding: 3px;
+	margin-left: 30px;
+}
+
+.profile .publications .table tr {
+	border: 3px solid red;
+	padding-top: 15px !important;
+	padding-bottom: 15px !important;
+	background: linear-gradient(45deg, black, #4a02f7) !important;
+}
